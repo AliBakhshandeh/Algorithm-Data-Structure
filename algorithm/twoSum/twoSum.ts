@@ -13,8 +13,8 @@ const twoSumNestedLoops = (nums: number[], target: number): number[] | [] => {
     throw new Error("Array must have at least one element or up");
   }
 
-  for (let i = 0; i <= nums.length; i++) {
-    for (let j = i + 1; j <= nums.length; j++) {
+  for (let i: number = 0; i <= nums.length; i++) {
+    for (let j: number = i + 1; j <= nums.length; j++) {
       if (nums[i] + nums[j] === target) {
         return [i, j];
       }
@@ -34,7 +34,7 @@ const twoSumObjects = (nums: number[], target: number): number[] | [] => {
     throw new Error("Array must have at least one element or up");
   }
   const obj: { [key: number]: number } = {};
-  for (let i = 0; i <= nums.length; i++) {
+  for (let i: number = 0; i <= nums.length; i++) {
     const res = target - nums[i];
     if (obj[res] != undefined) {
       return [obj[res], i];
@@ -56,7 +56,7 @@ const twoSumHashMap = (nums: number[], target: number): number[] | [] => {
     throw new Error("Array must have at least one element or up");
   }
   const map: Map<number, number> = new Map();
-  for (let i = 0; i <= nums.length; i++) {
+  for (let i: number = 0; i <= nums.length; i++) {
     const res = target - nums[i];
     if (map.has(res)) {
       return [map.get(res) as number, i];
