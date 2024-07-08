@@ -8,7 +8,7 @@
 // 1. Nested Loops
 // time complexity O(n ^ 2)
 // space complexity O(n ^ 2)
-const twoSumNestedLoops = (nums, target) => {
+const twoSumNestedLoops = (nums: number[], target: number): number[] | [] => {
   if (nums.length < 1) {
     throw new Error("Array must have at least one element or up");
   }
@@ -29,11 +29,11 @@ console.log(resultTwoSumNestedLoops);
 // 2. Objects
 // time complexity O(n)
 // space complexity O(n)
-const twoSumObjects = (nums, target) => {
+const twoSumObjects = (nums: number[], target: number): number[] | [] => {
   if (nums.length <= 1) {
     throw new Error("Array must have at least one element or up");
   }
-  const obj = {};
+  const obj: { [key: number]: number } = {};
   for (let i = 0; i <= nums.length; i++) {
     const res = target - nums[i];
     if (obj[res] != undefined) {
@@ -51,15 +51,15 @@ console.log(resultTwoSumObjects);
 // 3. Hash map
 // time complexity O(n)
 // space complexity O(n)
-const twoSumHashMap = (nums, target) => {
+const twoSumHashMap = (nums: number[], target: number): number[] | [] => {
   if (nums.length <= 1) {
     throw new Error("Array must have at least one element or up");
   }
-  const map = new Map();
+  const map: Map<number, number> = new Map();
   for (let i = 0; i <= nums.length; i++) {
     const res = target - nums[i];
     if (map.has(res)) {
-      return [map.get(res), i];
+      return [map.get(res) as number, i];
     } else {
       map.set(nums[i], i);
     }
